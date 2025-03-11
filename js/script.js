@@ -26,3 +26,24 @@ document.getElementById('btn_health_wishes').addEventListener('click', () => {
    document.getElementById('p-health-wishes').innerText = arrayOfhealthWishes[index]
 })
 
+let galleryImage = 1
+
+document.getElementById("main-image").setAttribute('src',`img/gallery/${galleryImage}.jpg`)
+
+document.getElementById('right-arrow').addEventListener('click',()=>{
+   galleryImage++
+   console.log(galleryImage)
+
+   if(galleryImage == 4) galleryImage = 1
+
+   document.getElementById("main-image").setAttribute('src',`img/gallery/${galleryImage}.jpg`)
+})
+
+document.getElementById('left-arrow').addEventListener('click',()=>{
+   galleryImage--
+   console.log(galleryImage)
+
+   if(galleryImage == 0) galleryImage = 3
+
+   document.getElementById("main-image").setAttribute('src',`img/gallery/${galleryImage}.jpg`)
+})
