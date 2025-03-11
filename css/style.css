@@ -68,17 +68,17 @@ h2 {
 .feature-kitten {
   padding-top: 60px;
   width:50px;
-  background-image: url("../img/smallpill1.png")  ;
+  background-image: url("../img/smallpill1.jpg")  ;
 }
 
 .feature-cat {
   padding-top: 60px;
-  background-image: url("../img/smallpill2.png");
+  background-image: url("../img/smallpill1.jpg");
 }
 
 .feature-train {
   padding-top: 60px;
-  background-image: url("../img/smallpill3.png");
+  background-image: url("../img/smallpill1.jpg");
 }
 
 .skills-list {
@@ -93,29 +93,25 @@ h2 {
 }
 
 /* Галерея */
+
 .gallery{
+  width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  gap:10px;
-  width: 100%;
+  align-items: center;
 }
 
-.main-image{
-  width: 200px;
-  transition: opacity 0.3s ease;
-  opacity: 1;
+#main-image{
+  width: 300px;
 }
 
-.arrow-image {
-  width: 64px;
-  height: 64px;
-}
+#left-arrow, #right-arrow{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+} 
 
-.arrow-image img:hover{
-  box-shadow: 10px 10px 5px #999999 ;
-}
 
 /* Побажання */
 
