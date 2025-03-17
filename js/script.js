@@ -21,29 +21,37 @@ const arrayOfhealthWishes = [
    "Свіже повітря: часто провітрюйте приміщення, виходьте на прогулянки."
 ];
 
+const arrayOfGalleryImages = [
+   "1.jpg",
+   "2.jpg",
+   "3.jpg",
+   "young-handsome-physician-medical-robe-with-stethoscope.jpg",
+   "person-using-tensiometer-blood-pressure.jpg",
+]
+
 document.getElementById('btn_health_wishes').addEventListener('click', () => {    
    let index = Math.floor(Math.random() * arrayOfhealthWishes.length)
    document.getElementById('p-health-wishes').innerText = arrayOfhealthWishes[index]
 })
 
-let galleryImage = 1
+let galleryImage = 0
 
-document.getElementById("main-image").setAttribute('src',`img/gallery/${galleryImage}.jpg`)
+document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
 
 document.getElementById('right-arrow').addEventListener('click',()=>{
    galleryImage++
    console.log(galleryImage)
 
-   if(galleryImage == 4) galleryImage = 1
+   if(galleryImage == arrayOfGalleryImages.length) galleryImage = 0
 
-   document.getElementById("main-image").setAttribute('src',`img/gallery/${galleryImage}.jpg`)
+   document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
 })
 
 document.getElementById('left-arrow').addEventListener('click',()=>{
    galleryImage--
    console.log(galleryImage)
 
-   if(galleryImage == 0) galleryImage = 3
+   if(galleryImage == -1) galleryImage = arrayOfGalleryImages.length - 1
 
-   document.getElementById("main-image").setAttribute('src',`img/gallery/${galleryImage}.jpg`)
+   document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
 })
