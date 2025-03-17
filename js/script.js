@@ -36,7 +36,9 @@ document.getElementById('btn_health_wishes').addEventListener('click', () => {
 
 let galleryImage = 0
 
-document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
+amin(galleryImage)
+
+//document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
 
 document.getElementById('right-arrow').addEventListener('click',()=>{
    galleryImage++
@@ -44,7 +46,8 @@ document.getElementById('right-arrow').addEventListener('click',()=>{
 
    if(galleryImage == arrayOfGalleryImages.length) galleryImage = 0
 
-   document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
+   //document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
+   amin(galleryImage)
 })
 
 document.getElementById('left-arrow').addEventListener('click',()=>{
@@ -53,5 +56,16 @@ document.getElementById('left-arrow').addEventListener('click',()=>{
 
    if(galleryImage == -1) galleryImage = arrayOfGalleryImages.length - 1
 
-   document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
+   //document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
+   amin(galleryImage)
 })
+
+
+function amin(galleryImage){
+   const mainImage = document.getElementById('main-image');
+   mainImage.style.opacity = '0'; // Почати з прозорості
+   mainImage.setAttribute('src', `img/gallery/${arrayOfGalleryImages[galleryImage]}`);
+   setTimeout(() => {       
+       mainImage.style.opacity = '1'; // Показати зображення
+   }, 300); // Час анімації має співпадати з transition у CSS
+}
