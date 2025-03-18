@@ -69,3 +69,69 @@ function amin(galleryImage){
        mainImage.style.opacity = '1'; // Показати зображення
    }, 300); // Час анімації має співпадати з transition у CSS
 }
+
+const arrayOfObjects = [
+   {
+      id:1,
+      title:"Аевіт",
+      photo:"",
+      description:"",
+      rating:4,
+      type:""
+   },
+   {
+      id:2,
+      title:"Вітамін С",
+      photo:"",
+      description:"",
+      rating:3,
+      type:""
+   },
+   {
+      id:3,
+      title:"Вітамін D",
+      photo:"",
+      description:"",
+      rating:5,
+      type:""
+   },
+   {
+      id:4,
+      title:"Вітамін B3",
+      photo:"",
+      description:"",
+      rating:5,
+      type:""
+   },
+   {
+      id:5,
+      title:"Омега-3",
+      photo:"",
+      description:"",
+      rating:3,
+      type:""
+   },
+   {
+      id:6,
+      title:"Magnium-B6",
+      photo:"",
+      description:"",
+      rating:3,
+      type:""
+   },
+   
+]
+
+console.log(arrayOfObjects)
+
+
+arrayOfObjects.forEach((item) =>{
+   console.log(item)
+
+   let divVitamin = document.createElement('div')
+   divVitamin.innerText = item.title
+   divVitamin.classList.add('vitamin')
+
+   document.getElementById("p-vitamins").appendChild(divVitamin)
+}) 
+
