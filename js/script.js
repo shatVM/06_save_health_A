@@ -70,22 +70,22 @@ function amin(galleryImage){
    }, 300); // Час анімації має співпадати з transition у CSS
 }
 
-const arrayOfObjects = [
+const arrayOfVitamins = [
    {
       id:1,
-      title:"Аевіт",
-      photo:"",
-      description:"",
+      title:"Вітамін А",
+      photo:"vitamin-a.png",
+      description:"Вітамін А — група близьких за хімічною будовою речовин, яка включає ретиноїди: ретинол (вітамін A1, аксерофтол), дегідроретинол (вітамін А2), ретиналь (ретинен, альдегід вітаміну A1), ретиноєву кислоту і кілька провітамінів — каротиноїдів, серед яких найважливішим є β-каротин.",
       rating:4,
-      type:""
+      type:"кристалічні"
    },
    {
       id:2,
       title:"Вітамін С",
-      photo:"",
-      description:"",
+      photo:"vitamin-c.png",
+      description:"Аскорбíнова кислотá (лат. Ascorbic acid (BP, JP, USP)[1][2][3], лат. Acidum ascorbinicum (PhEur)[1], гамма-лактон 2,3-дегідро-L-гулонової кислоти, вітамін C) — відносно проста органічна кислота.",
       rating:3,
-      type:""
+      type:"водорозчинні"
    },
    {
       id:3,
@@ -122,16 +122,24 @@ const arrayOfObjects = [
    
 ]
 
-console.log(arrayOfObjects)
+//console.log(arrayOfVitamins)
 
 
-arrayOfObjects.forEach((item) =>{
-   console.log(item)
+arrayOfVitamins.forEach((item,index) =>{
+   //console.log("елемент №",index,item)
 
    let divVitamin = document.createElement('div')
-   divVitamin.innerText = item.title
    divVitamin.classList.add('vitamin')
 
+   divVitamin.innerHTML = `
+         <span>${item.id}</span>
+         <h3>${item.title}</h3>
+         <hr>
+         <img src="img/vitamins/${item.photo}" alt="">
+         <p>${item.description}</p>
+         <span>${'💚'.repeat(item.rating)+'🤍'.repeat(5-item.rating)}</span>
+         <p>${item.type}</p> 
+      `
    document.getElementById("p-vitamins").appendChild(divVitamin)
 }) 
 
