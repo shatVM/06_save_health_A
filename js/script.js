@@ -29,7 +29,7 @@ const arrayOfGalleryImages = [
    "person-using-tensiometer-blood-pressure.jpg",
 ]
 
-document.getElementById('btn_health_wishes').addEventListener('click', () => {    
+document.getElementById('btn_health_wishes').addEventListener('click', () => {
    let index = Math.floor(Math.random() * arrayOfhealthWishes.length)
    document.getElementById('p-health-wishes').innerText = arrayOfhealthWishes[index]
 })
@@ -40,49 +40,46 @@ amin(galleryImage)
 
 //document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
 
-document.getElementById('right-arrow').addEventListener('click',()=>{
+document.getElementById('right-arrow').addEventListener('click', () => {
    galleryImage++
    console.log(galleryImage)
 
-   if(galleryImage == arrayOfGalleryImages.length) galleryImage = 0
+   if (galleryImage == arrayOfGalleryImages.length) galleryImage = 0
 
    //document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
    amin(galleryImage)
 })
 
-document.getElementById('left-arrow').addEventListener('click',()=>{
+document.getElementById('left-arrow').addEventListener('click', () => {
    galleryImage--
    console.log(galleryImage)
 
-   if(galleryImage == -1) galleryImage = arrayOfGalleryImages.length - 1
+   if (galleryImage == -1) galleryImage = arrayOfGalleryImages.length - 1
 
    //document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfGalleryImages[galleryImage]}`)
    amin(galleryImage)
 })
 
 
-function amin(galleryImage){
+function amin(galleryImage) {
    const mainImage = document.getElementById('main-image');
    mainImage.style.opacity = '0'; // Почати з прозорості
    mainImage.setAttribute('src', `img/gallery/${arrayOfGalleryImages[galleryImage]}`);
-   setTimeout(() => {       
-       mainImage.style.opacity = '1'; // Показати зображення
+   setTimeout(() => {
+      mainImage.style.opacity = '1'; // Показати зображення
    }, 300); // Час анімації має співпадати з transition у CSS
 }
 
-const arrayOfVitamins = []
-
 fetch('js/vitamins.json')
-      .then(response => response.json())
-      .then(data => {
+   .then(response => response.json())
+   .then(data => {
+      data.forEach((item, index) => {
+         //console.log("елемент №",index,item)
 
-         data.forEach((item,index) =>{
-            //console.log("елемент №",index,item)
-         
-            let divVitamin = document.createElement('div')
-            divVitamin.classList.add('vitamin')
-         
-            divVitamin.innerHTML = `
+         let divVitamin = document.createElement('div')
+         divVitamin.classList.add('vitamin')
+
+         divVitamin.innerHTML = `
                   <p>${item.id}</p>
                   <h3>${item.title}</h3>
                   <hr>
@@ -91,17 +88,17 @@ fetch('js/vitamins.json')
                   
                   <div>
                   <img src="img/vitamins/${item.schema}" alt="">
-                     <p>${'💚'.repeat(item.rating)+'🤍'.repeat(5-item.rating)}</p>
+                     <p>${'💚'.repeat(item.rating) + '🤍'.repeat(5 - item.rating)}</p>
                      <p>${item.type}</p> 
                   </div>
                   
                `
-            document.getElementById("p-vitamins").appendChild(divVitamin)
-         })
-       
+         document.getElementById("p-vitamins").appendChild(divVitamin)
       })
-      .catch(error => {
-        console.error('Помилка при завантаженні JSON:', error);
-      });
+
+   })
+   .catch(error => {
+      console.error('Помилка при завантаженні JSON:', error);
+   });
 
 

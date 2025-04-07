@@ -1,5 +1,5 @@
 
-   [
+  [ 
     {
       "id":"001",
       "title":"Вітамін А",
@@ -30,9 +30,9 @@
    {
       "id":"895",
       "title":"Вітамін B12",
-      "photo":"vitamin-b12.png",
+      "photo":"vitamin-b.png",
       "description":"",
-      "schema":"vitamin-b12-schema.png",
+      "schema":"vitamin-b-schema.png",
       "rating":3,
       "type":"💧 водорозчинні"
    },   
