@@ -43,7 +43,7 @@ h2 {
   }
 
 .container {
-  width: 480px;
+  width: 600px;
   margin: 0 auto;
 }
 
@@ -180,18 +180,27 @@ h2 {
 } 
 
 .vitamin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border:1px solid rgb(124, 124, 124);
    margin:10px;
    padding:10px; 
    border-radius: 5px;
    box-shadow: #999999 5px 5px 10px;
-   width: 150px;
+   width: 250px;
    min-height: 300px;
    text-align: center;
 }
+/* all */
+.vitamin p{ 
+  color: #333333;
+  text-align: justify; 
+}
 
-.vitamin span:first-child{
-  text-align: right;
+/* id */
+.vitamin p:first-child{
+  align-self: flex-end;
   font-size: 10px;
   color: #999999;
 }
@@ -201,21 +210,40 @@ h2 {
 }
 
 .vitamin img{
-  width: 50px;
-  height: 50px;
+  width: 64px;
+  height: 64px;
 }
 
-.vitamin p:first-child{
-  text-align: justify;
-  font-size: 18px;
-  color: #000dff;
+/* блок притиснутий до низу картки  */
+.vitamin div{
+  margin-top: auto;
+  width: 100%;  
 }
 
-.vitamin p:last-child{
+/*img schema */
+.vitamin div>img{
+ width: 100%;
+ height: auto  
+}
+
+/* rating*/
+.vitamin div>p:first-child{
   text-align: center;
   width: 100%;
   border-top: 1px solid #999999 ;
-  border-bottom: 1px solid #999999 ;
+  border-bottom: 1px solid #999999;
+  border-radius: 10px 10px 0px 0px;   
+  background-color: #cccccc;
+  font-size: 14px;
+}
+
+/* type */
+.vitamin div>p:last-child{
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #999999 ;
+  border-bottom: 1px solid #999999;
+  border-radius: 0px 0px 10px 10px;   
   background-color: #cccccc;
   font-size: 14px;
 }
